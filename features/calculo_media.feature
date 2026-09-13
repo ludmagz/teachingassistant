@@ -1,6 +1,6 @@
 Feature: Cálculo de média e vizualização com cores da situação dos alunos
     
-    Descrição: calcular a média dos alunos e informar por meio de cores a sitação doa aluno: se está passando pro média, vai pra final, etc.
+    Descrição: calcular a média dos alunos e informar por meio de cores a sitação do aluno: se está aprovado, passando por média ou vai pra final.
 
 Scenario: calculo de média automático após registro de uma nota
 
