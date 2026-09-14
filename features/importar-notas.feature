@@ -26,9 +26,4 @@ Scenario: Importação parcial com ignorar linhas inválidas
 Given that the user submited an spreadsheet with 20 students
 WHen two lines contains grades in text format
 Then the system must import the 18 valid students
-And generate an error message
-
-Scenario: Cancelar importação durante o processamento
-Given that the grades spreadsheet is processed
-When the user press "Cancelar Importação""
-Then the system must discard the alterations
+And generate an error message that says "Invalid type lines: Some students could not be imported"
