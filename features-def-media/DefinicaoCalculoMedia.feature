@@ -19,6 +19,14 @@ Feature: Definição do cálculo de média
     Then o sistema armazena o modelo numérico com corte "5.0" para a turma "Engenharia de Software e Sistemas"
     And retorna uma mensagem de aviso sobre o impacto na visualização do diário de notas
 
+  Scenario: Configuração de modelo qualitativo baseado em conceitos
+    Given o sistema não possui regras de cálculo definidas para a turma "Eletrônica"
+    And eu acesso o sistema como "professora" na página de configurações da turma
+    When eu seleciono o modelo de avaliação "Conceitos (MA, MPA, MANA)"
+    And confirmo a gravação dos dados
+    Then o sistema armazena o modelo qualitativo para a turma "Eletrônica"
+    And oculta o campo de média de corte numérica
+
   Scenario: arredondamento da média para 1 casa decimal sempre para cima
     Given estou logado como professor "Paulo" na página "Registro de Notas"
     And a opção "média simples" está selecionada
