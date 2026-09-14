@@ -34,3 +34,9 @@ Scenario: adicionando novo cenario experimental
 Given precondicao
 When transicao
 Then poscondicao
+
+Scenario: adicionando outro novo cenario experimental
+
+Given prec2
+When transi2
+Then post2
