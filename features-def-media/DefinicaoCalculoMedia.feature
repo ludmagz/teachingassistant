@@ -25,3 +25,4 @@ Feature: Definição do cálculo de média
     And na linha da aluna "Marina" vejo as notas "10","8.1","-" e média "6.1"
     When registro a nota "9.3" na ultima nota
     Then na linha da aluna "Marina" vejo as notas "10", "8.1", "9.3" e média "9.2"
+    And retorna a mensagem de que a nota da aluna "Marina" foi alterada com sucesso
