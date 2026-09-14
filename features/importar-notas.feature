@@ -32,3 +32,8 @@ Scenario: Importação de arquivo grande demais
 Given that the user submited a file that surpasses the size limit
 When he clicks the preview button
 The system must show an error message
+
+Scenario: Exportar relatório de notas importadas com sucesso
+Given that the user finished importing an spreadsheet
+When he clicks "Baixar relatório"
+Then the system must generate an PDF archive with the resume of the saved grades
