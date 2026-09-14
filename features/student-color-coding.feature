@@ -26,7 +26,7 @@ Então o aluno deve ser destacado com a cor correspondente a "reprovação anter
 
 Scenario: Identificar aluno com acima da média e sem reprovação anterior
 Given a média da turma é "7,0"
-And o aluno de matrícula "123" possui média "8,5"
+And o aluno de matrícula "123" possui média "10,0S"
 And o aluno não possui reprovações anteriores
 Quando o professor visualizar a lista de alunos
 Então o aluno deve ser destacado com a cor correspondente a "sem reprovação anterior + acima da média"
