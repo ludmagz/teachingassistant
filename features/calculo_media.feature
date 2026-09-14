@@ -47,3 +47,10 @@ Scenario: adicionando outro novo cenario experimental3
 Given prec3
 When transi3
 Then post3
+
+Scenario: adicionando outro cenario pro roteiro
+
+Given prec4
+When transi4
+Then post4
+And detalhe que tinha esquecido
