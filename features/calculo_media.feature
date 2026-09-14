@@ -19,3 +19,12 @@ When registro a nota "9" na ultima nota
 Then eu continuo na página "Registro de Notas"
 And eu vejo uma mensagem de aviso sobre o tipo de média
 And na linha da aluna "Marina" vejo as notas "10","8","9" e média "-"
+
+Scenario: coloração dos alunos quando a média é arredondada e muda de faixa
+
+Given estou logado como professor "Paulo" na página "Registro de Notas"
+And a opção "média simples" está selecionada
+And na linha da aluna "Marina" vejo as notas "7.0","7.0","-" e média "4.7"
+When registro a nota "6.9" na ultima nota
+Then na linha da aluna "Marina" vejo as notas "7.0", "7.0", "6.9" e média "7.0"
+And o campo "média" da aluna "Marina" está colorido de verde
