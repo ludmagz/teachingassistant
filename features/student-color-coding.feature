@@ -30,3 +30,10 @@ And o aluno de matrícula "123" possui média "8,5"
 And o aluno não possui reprovações anteriores
 When o professor visualizar a lista de alunos
 Then o aluno deve ser destacado com a cor correspondente a "sem reprovação anterior + acima da média"
+
+Scenario: Identificar aluno na médoa
+Given a média da turma é "7,0"
+And o aluno de matrícula "123" possui média "7,0"
+And o aluno não possui reprovações anteriores
+When o professor visualizar a lista de alunos
+Then o aluno deve ser destacado com a cor correspondente a "na média"
