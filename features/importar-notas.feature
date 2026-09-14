@@ -21,3 +21,14 @@ When he clicks de button import
 Then the system must refuse the import
 And show an warning
 And the system must send an confirmation mail to the user
+
+Scenario: Importação parcial com ignorar linhas inválidas
+Given that the user submited an spreadsheet with 20 students
+WHen two lines contains grades in text format
+Then the system must import the 18 valid students
+And generate an error message
+
+Scenario: Cancelar importação durante o processamento
+Given that the grades spreadsheet is processed
+When the user press "Cancelar Importação""
+Then the system must discard the alterations
