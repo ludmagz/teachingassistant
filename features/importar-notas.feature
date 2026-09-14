@@ -27,3 +27,8 @@ Given that the user submited an spreadsheet with 20 students
 WHen two lines contains grades in text format
 Then the system must import the 18 valid students
 And generate an error message that says "Invalid type lines: Some students could not be imported"
+
+Scenario: Importação de arquivo grande demais
+Given that the user submited a file that surpasses the size limit
+When he clicks the preview button
+The system must show an error message
