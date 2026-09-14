@@ -18,3 +18,10 @@ Feature: Definição do cálculo de média
     Then o sistema substitui as regras anteriores
     Then o sistema armazena o modelo numérico com corte "5.0" para a turma "Engenharia de Software e Sistemas"
     And retorna uma mensagem de aviso sobre o impacto na visualização do diário de notas
+
+  Scenario: arredondamento da média para 1 casa decimal sempre para cima
+    Given estou logado como professor "Paulo" na página "Registro de Notas"
+    And a opção "média simples" está selecionada
+    And na linha da aluna "Marina" vejo as notas "10","8.1","-" e média "6.1"
+    When registro a nota "9.3" na ultima nota
+    Then na linha da aluna "Marina" vejo as notas "10", "8.1", "9.3" e média "9.2"
