@@ -28,3 +28,9 @@ And na linha da aluna "Marina" vejo as notas "7.0","7.0","-" e média "4.7"
 When registro a nota "6.9" na ultima nota
 Then na linha da aluna "Marina" vejo as notas "7.0", "7.0", "6.9" e média "7.0"
 And o campo "média" da aluna "Marina" está colorido de verde
+
+Scenario: adicionando novo cenario experimental
+
+Given precondicao
+When transicao
+Then poscondicao
