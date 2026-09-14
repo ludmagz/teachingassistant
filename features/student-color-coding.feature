@@ -21,8 +21,8 @@ Scenario: Identificar aluno com reprovação anterior e abaixo da média da turm
 Given a média da turma é "7,0"
 And o aluno de matrícula "123" possui média "6,5"
 And o aluno possui 1 reprovação anterior
-Quando o professor visualizar a lista de alunos
-Então o aluno deve ser destacado com a cor correspondente a "reprovação anterior + abaixo da média"
+When o professor visualizar a lista de alunos
+Then o aluno deve ser destacado com a cor correspondente a "reprovação anterior + abaixo da média"
 
 Scenario: Identificar aluno com acima da média e sem reprovação anterior
 Given a média da turma é "7,0"
