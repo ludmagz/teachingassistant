@@ -20,3 +20,4 @@ And the spreadsheet contains a grade bigger then 10 or lower then 0
 When he clicks de button import
 Then the system must refuse the import
 And show an warning
+And the system must send an confirmation mail to the user
