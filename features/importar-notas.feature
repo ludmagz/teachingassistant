@@ -19,7 +19,7 @@ Given That the user is at the details of the spreadsheet page
 And the spreadsheet contains a grade bigger then 10 or lower then 0
 When he clicks de button import
 Then the system must refuse the import
-And show an warning
+And show an warning which says "there are one invalid grade in the spreadsheet"
 And the system must send an confirmation mail to the user
 
 Scenario: Importação parcial com ignorar linhas inválidas
