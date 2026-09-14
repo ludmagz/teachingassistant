@@ -43,3 +43,11 @@ Feature: Definição do cálculo de média
     And confirmo a gravação dos dados
     Then o sistema recusa o armazenamento
     And exibe uma mensagem de erro informando que a nota de corte deve estar entre 0 e 10
+
+  Scenario: Configuração de pesos das avaliações
+    Given o sistema não possui regras definidas para a turma "Engenharia de Software e Sistemas"
+    And eu acesso a página "configurações da turma"
+    When eu defino que o modelo terá "3 avaliações"
+    And distribuo os pesos igualmente
+    And confirmo a gravação
+    Then o sistema salva as configurações
