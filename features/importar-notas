@@ -1,0 +1,8 @@
+Feature: Importar notas de uma planilha.
+Queremos uma feature que permita que o professor usuário seja capaz de importar
+as notas dos alunos a partir de uma outra planilha externa (ex: numbers, excel etc).
+
+Scenario: Visualização bem-sucedidad de importação
+Given that the user is at the import grades page
+When he clicks at the button of import
+Then he must see the details of the spreadsheet he will be importing
