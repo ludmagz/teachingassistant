@@ -40,3 +40,6 @@ Feature: Definição do cálculo de média
     Given eu acesso o sistema como "professora" na página de configurações da turma "Física 3"
     When eu seleciono o modelo de avaliação "Numérico de 0 a 10"
     And defino a média de corte para aprovação como "11.5"
+    And confirmo a gravação dos dados
+    Then o sistema recusa o armazenamento
+    And exibe uma mensagem de erro informando que a nota de corte deve estar entre 0 e 10
