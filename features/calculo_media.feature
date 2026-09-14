@@ -38,6 +38,6 @@ Then poscondicao
 
 Scenario: adicionando outro novo cenario experimental
 
-Given prec2
-When transi2
-Then post2
+Given prec2-alt
+When transi2-alt
+Then post2-alt
