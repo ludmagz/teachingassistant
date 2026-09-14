@@ -34,3 +34,9 @@ Feature: Definição do cálculo de média
     When registro a nota "9.3" na ultima nota
     Then na linha da aluna "Marina" vejo as notas "10", "8.1", "9.3" e média "9.2"
     And retorna a mensagem de que a nota da aluna "Marina" foi alterada com sucesso
+
+
+  Scenario: Tentativa de configuração com nota de corte inválida
+    Given eu acesso o sistema como "professora" na página de configurações da turma "Física 3"
+    When eu seleciono o modelo de avaliação "Numérico de 0 a 10"
+    And defino a média de corte para aprovação como "11.5"
