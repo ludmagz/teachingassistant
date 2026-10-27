@@ -4,7 +4,7 @@ Feature: Cálculo de média e vizualização com cores da situação dos alunos
 
 Scenario: calculo de média automático após registro de uma nota
 
-Given estou na página "Evaluations" na turma "ESS - (2026/1)" na turma "ESS - (2026/1)"
+Given estou na página "Evaluations" na turma "ESS - (2026/1)"
 And a opção "média simples" está selecionada
 And na linha da aluna "Marina" vejo as notas "10.0","8.0","-" nas metas "Requisitos", "Testes" e "Saas", respectivamente e média "-"
 When registro a nota "9.0" na meta "Saas"
