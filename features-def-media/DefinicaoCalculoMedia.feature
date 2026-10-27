@@ -1,4 +1,7 @@
 Feature: Definição do cálculo de média
+  As a professora
+  I want to definir o modelo para o cálculo de médias de uma turma
+  So that eu possa cadastrar, visualizar e modificar o modelo de avaliações da turma
 
   Scenario: Configuração bem-sucedida do modelo de notas numéricas simples
     Given o sistema não possui regras de cálculo definidas para a turma "Engenharia de Software e Sistemas"
