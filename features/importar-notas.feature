@@ -1,39 +1,43 @@
 Feature: Importar notas de uma planilha.
-Queremos uma feature que permita que o professor usuário seja capaz de importar
-as notas dos alunos a partir de uma outra planilha externa (ex: numbers, excel etc.).
+As a professor
+I want to cadastrar as notas dos estudantes no sistema por meio de uma planilha .csv
+So that eu perca menos tempo preenchendo notas
 
-Scenario: Visualização bem-sucedida de importação
-Given that the user is at the import grades page
-When he adds a spreadsheet
-And he clicks at the preview button
-Then the system must show the details of the spreadsheet he will be importing
+Scenario: Importação bem-sucedida de uma planilha de notas
+Given que o usuário "Paulo" está na tela de importar notas
+When ele adiciona uma planilha de notas
+And ele seleciona a opção de preencher a tabela da turma "2025.1"
+Then o sistema deve mostrar uma mensagem de confirmação de preenchimento
 
-Scenario: Tentativa de upload com formato de spreadsheet inválido
-Given that the user is at the import grades page
-When he adds a .pdf archive
-And he clicks at the preview button
-Then the system must show an error message
+Scenario: Tentativa de upload de tabela com formato inválido
+Given que o usuário "Pualo" está na tela de importar notas
+When ele adiciona um arquivo de um tipo diferente de .csv
+And ele seleciona a opção de preencher a tabela da turma "2025.1"
+Then o sistema deve mostrar uma mensagem de erro de leitura da planilha
 
 Scenario: Tentativa de importação com planilha contendo notas fora do intervalo permitido
-Given That the user is at the details of the spreadsheet page
-And the spreadsheet contains a grade bigger then 10 or lower then 0
-When he clicks de button import
-Then the system must refuse the import
-And show an warning which says "there are one invalid grade in the spreadsheet"
-And the system must send an confirmation mail to the user
+Given que o usuário "Paulo" está na tela de importar notas
+And a tabela contém uma nota maior que 10 ou menor que 0
+When "Paulo" seleciona a opção de importar
+Then o sistema deve recusar a importaçãos
+And mostrar um aviso sobre uma ou mais notas inválidas
 
-Scenario: Importação parcial com ignorar linhas inválidas
-Given that the user submited an spreadsheet with 20 students
-WHen two lines contains grades in text format
-Then the system must import the 18 valid students
-And generate an error message that says "Invalid type lines: Some students could not be imported"
+Scenario: Tentativa de importação de planilha com informações inválidas
+Given que o usuário "Paulo" enviou uma planilha com 20 alunos
+When uma célula ou mais da coluna notas contém dados inválidos (tipo errado)
+Then o sistema deve recusar a importação
+And mostrar um aviso sobre uma ou mais notas inválidas
 
 Scenario: Importação de arquivo grande demais
-Given that the user submited a file that surpasses the size limit
-When he clicks the preview button
-The system must show an error message
+Given que o usuário "Paulo" está na tela de importação de telas
+And "Paulo" seleciona um arquivo que passa o tamanho de importação limite de 1MB
+When "Paulo" seleciona a opção de importar
+Then o sistema deve recusar a importação
+And mostrar um aviso sobre planilha grande demais
 
-Scenario: Exportar relatório de notas importadas com sucesso
-Given that the user finished importing an spreadsheet
-When he clicks "Baixar relatório"
-Then the system must generate an PDF archive with the resume of the saved grades
+Scenario: Importação de arquivo nulo
+Given que o usuário "Paulo" está na tela de importação de telas
+And "Paulo" seleciona um arquivo que está vazio
+When "Paulo" seleciona a opção de importar
+Then o sistema deve recusar a importação
+And mostrar um aviso sobre planilha vazia
