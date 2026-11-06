@@ -1,11 +1,11 @@
 import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing-module';
-import { App } from './app';
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    App
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -15,6 +15,6 @@ import { App } from './app';
     provideBrowserGlobalErrorListeners(),
     //provideClientHydration(),
   ],
-  bootstrap: [App]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
